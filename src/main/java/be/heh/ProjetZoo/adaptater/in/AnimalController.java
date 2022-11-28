@@ -14,6 +14,18 @@ import java.util.List;
 
 public class AnimalController {
 
-    private final
+    private final AnimalListUseCase animalListUseCase;
+    private List<Animal> animals;
+
+    @GetMapping ("/")
+    public String animalList(Model model){
+    animals = animalListUseCase.getAnimalList();
+    model.addAttribute("animals",animals);
+
+    return "animalList";
+    }
+
+
+
 
 }
