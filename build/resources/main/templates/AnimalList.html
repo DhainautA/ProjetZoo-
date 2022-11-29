@@ -15,6 +15,12 @@
         <th>Catégorie</th>
         <th>Prix</th>
     </tr>
+    </tr>
+    <tr th:each="animal : ${animals}">
+        <td th:text="${animals.getname}"></td>
+        <td th:text="${animals.getcategory}"></td>
+        <td th:text="${animals.getprice}"></td>
+    </tr>
 </table>
 
 </body>

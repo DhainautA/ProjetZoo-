@@ -12,7 +12,7 @@ public class AnimalJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_animal")
-    private Long idStudent;
+    private Long id_animals;
 
     @Column(name = "name")
     private String name;
