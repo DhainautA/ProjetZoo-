@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -15,12 +15,13 @@
         <th>Catégorie</th>
         <th>Prix</th>
     </tr>
-    </tr>
-    <tr th:each="animal : ${animals}">
-        <td th:text="${animals.getname}"></td>
-        <td th:text="${animals.getcategory}"></td>
-        <td th:text="${animals.getprice}"></td>
-    </tr>
+
+        <tr th:each="animal : ${animals}">
+        <td th:text="${animal.getName}"></td>
+        <td th:text="${animal.getCategory}"></td>
+        <td th:text="${animal.getPrice}"></td>
+        </tr>
+
 </table>
 
 </body>

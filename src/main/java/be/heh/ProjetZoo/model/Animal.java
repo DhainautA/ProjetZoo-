@@ -9,12 +9,12 @@ import lombok.RequiredArgsConstructor;
 public class Animal {
 
     @Getter
-    private final String nom;
+    private final String name;
 
     @Getter
-    private final String catégorie;
+    private final String category;
 
     @Getter
-    private final Float prix;
+    private final Float price;
 
 }

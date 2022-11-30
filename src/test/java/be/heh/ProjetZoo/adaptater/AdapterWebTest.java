@@ -2,7 +2,6 @@ package be.heh.ProjetZoo.adaptater;
 
 
 import be.heh.ProjetZoo.adaptater.in.AnimalController;
-import be.heh.ProjetZoo.adaptater.out.AnimalMapper;
 import be.heh.ProjetZoo.model.Animal;
 import be.heh.ProjetZoo.port.in.AnimalListUseCase;
 import org.hamcrest.Matchers;
@@ -38,8 +37,8 @@ public class AdapterWebTest {
     @Test
     public void testAnimalController() throws Exception {
 
-        animals.add(new Animal("chat","félins", 15.0F));
-        animals.add(new Animal("chien","canidés",15.0F));
+        animals.add(new Animal("chat","felins", 15.0F));
+        animals.add(new Animal("chien","canides",15.0F));
         animals.add(new Animal("baleine","aquatique",200.0F));
 
         //Stub
