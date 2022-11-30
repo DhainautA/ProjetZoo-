@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
+
 @RequiredArgsConstructor
 
 public class AnimalController {
@@ -17,6 +18,9 @@ public class AnimalController {
     private final AnimalListUseCase animalListUseCase;
     private List<Animal> animals;
 
+    /*AnimalController(){
+        System.out.printf("Controller démarré");
+    }*/
     @GetMapping ("/")
     public String animalList(Model model){
     animals = animalListUseCase.getAnimalList();

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -23,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 //@SpringBootTest
 //@RunWith(SpringRunner.class)
-@WebMvcTest(AnimalMapper.class)
+@WebMvcTest(AnimalController.class)
 public class AdapterWebTest {
 
     @Autowired
@@ -32,7 +33,7 @@ public class AdapterWebTest {
     @MockBean
     private AnimalListUseCase animalListUseCase;
 
-    private List<Animal> animals = new ArrayList<>();
+    private List<Animal>animals = new ArrayList<>();
 
     @Test
     public void testAnimalController() throws Exception {
@@ -44,10 +45,12 @@ public class AdapterWebTest {
         //Stub
         Mockito.when(animalListUseCase.getAnimalList()).thenReturn(animals);
 
-        mockMvc.perform(get("/"))
+       mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("animalList"))
                 .andExpect(model().attributeExists("animals"))
                 .andExpect(model().attribute("animals",Matchers.hasSize(3)));
+
+
     }
 }
