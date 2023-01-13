@@ -4,6 +4,7 @@ import be.heh.ProjetZoo.adaptater.out.AnimalMapper;
 import be.heh.ProjetZoo.adaptater.out.AnimalPersistenceAdapter;
 import be.heh.ProjetZoo.adaptater.out.AnimalRepository;
 import be.heh.ProjetZoo.port.in.AnimalListUseCase;
+import be.heh.ProjetZoo.port.in.AnimalUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
@@ -18,8 +19,7 @@ public class Configuration {
     private AnimalMapper animalMapper = new AnimalMapper();
 
     @Bean
-
-    AnimalListUseCase getAnimalListUseCase(){
+    AnimalUseCase getAnimalList(){
 
     return new AnimalPersistenceAdapter(animalRepository,animalMapper);
     }

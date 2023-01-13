@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajout d'un animal</title>
+</head>
+<body>
+
+<h1>Ajout d'un animal</h1>
+
+<div>
+    <form th:action="*{'/animal'+ ${animal.getId()}}" th:object="${animal}" method="post">
+    <label>Nom</label><br>
+    <input action="#" th:field="*{Name}" type="text"><br>
+    <label>Categoie</label><br>
+    <input action="#" th:field="*{Category}" type="text"><br>
+    <label>Prix</label><br>
+    <input action="#" th:field="*{Price}" type="float">
+        <button type="submit" value="Submit">Ajouter</button>
+    </form>
+
+</div>
+
+</body>
+</html>

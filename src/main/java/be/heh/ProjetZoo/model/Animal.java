@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class Animal {
+    @Getter
+    private final long id;
 
     @Getter
     private final String name;
@@ -16,5 +18,6 @@ public class Animal {
 
     @Getter
     private final Float price;
-
 }
+
+

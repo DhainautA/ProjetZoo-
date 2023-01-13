@@ -3,7 +3,7 @@ package be.heh.ProjetZoo.adaptater;
 
 import be.heh.ProjetZoo.adaptater.in.AnimalController;
 import be.heh.ProjetZoo.model.Animal;
-import be.heh.ProjetZoo.port.in.AnimalListUseCase;
+import be.heh.ProjetZoo.port.in.AnimalUseCase;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -30,19 +30,19 @@ public class AdapterWebTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private AnimalListUseCase animalListUseCase;
+    private AnimalUseCase animalUseCase;
 
     private List<Animal>animals = new ArrayList<>();
 
     @Test
     public void testAnimalController() throws Exception {
 
-        animals.add(new Animal("chat","felins", 15.0F));
-        animals.add(new Animal("chien","canides",15.0F));
-        animals.add(new Animal("baleine","aquatique",200.0F));
+        animals.add(new Animal(0,"chat", "Domestique",15.0F));
+        animals.add(new Animal(1,"chien","Domestique",15.0F));
+        animals.add(new Animal(2,"baleine","aquatique",200.0F));
 
         //Stub
-        Mockito.when(animalListUseCase.getAnimalList()).thenReturn(animals);
+        Mockito.when(animalUseCase.getAnimalList()).thenReturn(animals);
 
        mockMvc.perform(get("/"))
                 .andExpect(status().isOk())

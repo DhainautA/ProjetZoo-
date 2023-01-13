@@ -18,7 +18,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Testcontainers
-@ActiveProfiles("test")
+@ActiveProfiles("dev")
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
@@ -43,6 +43,6 @@ public class AdapterPersistenceTest extends AbstractIntegrationTest {
 
         assertEquals("chat",animals.get(0).getName());
         assertEquals("felin",animals.get(0).getCategory());
-        assertEquals(20,animals.get(0).getPrice());
+        assertEquals(20.0F,animals.get(0).getPrice());
     }
 }

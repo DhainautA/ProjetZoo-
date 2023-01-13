@@ -2,5 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/AnimalTablecreate.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/be/heh/ProjetZoo/adaptater/AnimalTablecreate.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/test/resources/be/heh/ProjetZoo/adaptater/list.sql" dialect="GenericSQL" />
   </component>
 </project>
