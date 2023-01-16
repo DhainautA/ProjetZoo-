@@ -9,13 +9,13 @@
 <h1>Ajout d'un animal</h1>
 
 <div>
-    <form th:action="*{'/animal'+ ${animal.getId()}}" th:object="${animal}" method="post">
+    <form th:action="@{/addAnimal}" th:object="${animal}" method="post">
     <label>Nom</label><br>
-    <input action="#" th:field="*{Name}" type="text"><br>
-    <label>Categoie</label><br>
-    <input action="#" th:field="*{Category}" type="text"><br>
+    <input action="#" th:field="*{animal.name}" type="text"><br>
+    <label>Categorie</label><br>
+    <input action="#" th:field="*{animal.category}" type="text"><br>
     <label>Prix</label><br>
-    <input action="#" th:field="*{Price}" type="float">
+    <input action="#" th:field="*{animal.price}" type="float">
         <button type="submit" value="Submit">Ajouter</button>
     </form>
 

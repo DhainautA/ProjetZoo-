@@ -6,10 +6,7 @@ import be.heh.ProjetZoo.port.in.AnimalUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,12 +31,13 @@ public class AnimalController {
 
     @GetMapping("/aAnimal")
     public String aAnimal(Model model){
-        model.addAttribute("animals", new Animal(0,"","",null));
+        model.addAttribute("animal", new Animal(0,"","",0F));
         return "aAnimal";
     }
 
-   @PostMapping("/aAnimal")
+   @PostMapping("/addAnimal")
     public String aAnimal(@ModelAttribute Animal animal,Model model){
+       model.addAttribute(animal);
        animalUseCase.addAnimal(animal);
        return "redirect:/";
    }
