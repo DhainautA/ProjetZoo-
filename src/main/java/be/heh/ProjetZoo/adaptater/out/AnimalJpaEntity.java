@@ -9,11 +9,21 @@ import javax.persistence.*;
 
 public class AnimalJpaEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    public AnimalJpaEntity(long id, String name, String category, float price) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.price = price;
+    }
+    public AnimalJpaEntity(){
 
-    @Column(name = "animalid")
-    private Long animalid;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "name")
     private String name;
@@ -22,5 +32,5 @@ public class AnimalJpaEntity {
     private String category;
 
     @Column(name = "price")
-    private Float price;
+    private float price;
 }

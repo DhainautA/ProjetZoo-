@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,13 +17,13 @@
     </tr>
 
         <tr th:each="animal : ${animals}">
-        <td th:text="${animal.getName}"></td>
-        <td th:text="${animal.getCategory}"></td>
-        <td th:text="${animal.getPrice}"></td>
+        <td th:text="${animal.getName()}"></td>
+        <td th:text="${animal.getCategory()}"></td>
+        <td th:text="${animal.getPrice()}"></td>
         </tr>
 
 </table>
-<a th:href="@{/aAnimal}">Cliquer ici</a>
+<a href="/aAnimal">Cliquer ici</a>
 
 </body>
 </html>

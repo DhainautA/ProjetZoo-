@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>766</IntrospectionStateNumber>
       <ServerVersion>15.0</ServerVersion>
       <StartupTime>1673621963</StartupTime>
       <TimeZones>true ACDT
@@ -686,7 +686,7 @@ true Pacific/Easter
 false Pacific/Efate
 false Pacific/Enderbury
 false Pacific/Fakaofo
-true Pacific/Fiji
+false Pacific/Fiji
 false Pacific/Funafuti
 false Pacific/Galapagos
 false Pacific/Gambier
@@ -1322,7 +1322,7 @@ true posix/Pacific/Easter
 false posix/Pacific/Efate
 false posix/Pacific/Enderbury
 false posix/Pacific/Fakaofo
-true posix/Pacific/Fiji
+false posix/Pacific/Fiji
 false posix/Pacific/Funafuti
 false posix/Pacific/Galapagos
 false posix/Pacific/Gambier
@@ -1399,9 +1399,9 @@ false posixrules
 13186||10|C|G
 13186||-9223372036854775808|U|G
 13186||10|U|G</Grants>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>766</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
-      <Relations>sequence|table|32783|32784|1
+      <Relations>sequence|table|32790|32791|1
 </Relations>
       <OwnerName>postdev</OwnerName>
     </database>
@@ -4810,20 +4810,20 @@ false posixrules
     <schema id="262" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>754</IntrospectionStateNumber>
+      <IntrospectionStateNumber>766</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="263" parent="262" name="animals_animalid_seq">
+    <sequence id="263" parent="262" name="animals_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>32783</ObjectId>
-      <StateNumber>753</StateNumber>
+      <ObjectId>32790</ObjectId>
+      <StateNumber>765</StateNumber>
       <OwnerName>postdev</OwnerName>
     </sequence>
     <table id="264" parent="262" name="animals">
-      <ObjectId>32784</ObjectId>
-      <StateNumber>753</StateNumber>
+      <ObjectId>32791</ObjectId>
+      <StateNumber>765</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postdev</OwnerName>
     </table>
@@ -4833,47 +4833,47 @@ false posixrules
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postdev</OwnerName>
     </table>
-    <column id="266" parent="264" name="animalid">
+    <column id="266" parent="264" name="id">
       <DataType>integer|0s</DataType>
-      <DefaultExpression>nextval(&apos;animals_animalid_seq&apos;::regclass)</DefaultExpression>
+      <DefaultExpression>nextval(&apos;animals_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>753</StateNumber>
+      <StateNumber>765</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="267" parent="264" name="name">
       <DataType>varchar(25)|0s</DataType>
       <Position>2</Position>
-      <StateNumber>753</StateNumber>
+      <StateNumber>765</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="268" parent="264" name="category">
       <DataType>varchar(25)|0s</DataType>
       <Position>3</Position>
-      <StateNumber>753</StateNumber>
+      <StateNumber>765</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="269" parent="264" name="price">
       <DataType>double precision|0s</DataType>
       <Position>4</Position>
-      <StateNumber>753</StateNumber>
+      <StateNumber>765</StateNumber>
       <TypeId>701</TypeId>
     </column>
     <index id="270" parent="264" name="animals_pkey">
-      <ColNames>animalid</ColNames>
+      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>32788</ObjectId>
+      <ObjectId>32795</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>753</StateNumber>
+      <StateNumber>765</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="271" parent="264" name="animals_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>32789</ObjectId>
+      <ObjectId>32796</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>753</StateNumber>
-      <UnderlyingIndexId>32788</UnderlyingIndexId>
+      <StateNumber>765</StateNumber>
+      <UnderlyingIndexId>32795</UnderlyingIndexId>
     </key>
     <column id="272" parent="265" name="installed_rank">
       <DataType>integer|0s</DataType>

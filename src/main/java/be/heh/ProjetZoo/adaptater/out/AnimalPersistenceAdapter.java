@@ -3,7 +3,6 @@ package be.heh.ProjetZoo.adaptater.out;
 import be.heh.ProjetZoo.model.Animal;
 import be.heh.ProjetZoo.port.in.AnimalUseCase;
 import lombok.RequiredArgsConstructor;
-import be.heh.ProjetZoo.adaptater.out.AnimalMapper;
 
 import java.util.List;
 
@@ -20,8 +19,8 @@ public class AnimalPersistenceAdapter implements AnimalUseCase {
         List<AnimalJpaEntity> animalEntity = animalRepository.findAll();
         return animalMapper.mapToDomainEntity(animalEntity);
     }
-    public Animal getAnimal(Long animalid){
-        AnimalJpaEntity selectedAnimal = animalRepository.getReferenceById(animalid);
+    public Animal getAnimal(Long id){
+        AnimalJpaEntity selectedAnimal = animalRepository.getReferenceById(id);
         return animalMapper.mapToSingleEntity(selectedAnimal);
     }
     @Override
@@ -31,11 +30,12 @@ public class AnimalPersistenceAdapter implements AnimalUseCase {
         animalEntity.setCategory(animal.getCategory());
         animalEntity.setPrice(animal.getPrice());
         animalRepository.save(animalEntity);
+
     }
 
     @Override
-    public void modifyAnimal(Long animalid, Animal animal) {
-        AnimalJpaEntity selectedAnimal = animalRepository.getReferenceById(animalid);
+    public void modifyAnimal(Long id, Animal animal) {
+        AnimalJpaEntity selectedAnimal = animalRepository.getReferenceById(id);
         selectedAnimal.setName(animal.getName());
         selectedAnimal.setCategory(animal.getCategory());
         selectedAnimal.setPrice(animal.getPrice());
@@ -44,8 +44,8 @@ public class AnimalPersistenceAdapter implements AnimalUseCase {
     }
 
     @Override
-    public void deleteAnimal(Long animalid) {
-        animalRepository.deleteById(animalid);
+    public void deleteAnimal(Long id) {
+        animalRepository.deleteById(id);
     }
 
 

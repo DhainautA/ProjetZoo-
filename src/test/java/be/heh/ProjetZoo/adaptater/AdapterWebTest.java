@@ -37,9 +37,9 @@ public class AdapterWebTest {
     @Test
     public void testAnimalController() throws Exception {
 
-        animals.add(new Animal(0,"chat", "Domestique",15.0F));
-        animals.add(new Animal(1,"chien","Domestique",15.0F));
-        animals.add(new Animal(2,"baleine","aquatique",200.0F));
+        animals.add(new Animal(0L,"chat", "Domestique",15.0F));
+        animals.add(new Animal(1L,"chien","Domestique",15.0F));
+        animals.add(new Animal(2L,"baleine","aquatique",200.0F));
 
         //Stub
         Mockito.when(animalUseCase.getAnimalList()).thenReturn(animals);

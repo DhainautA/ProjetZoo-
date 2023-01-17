@@ -6,7 +6,8 @@ plugins {
 
 group = 'be.heh'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '8'
+sourceCompatibility = '16' +
+        ''
 
 configurations {
     compileOnly {

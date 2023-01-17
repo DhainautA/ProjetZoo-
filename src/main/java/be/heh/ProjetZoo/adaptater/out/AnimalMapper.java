@@ -12,13 +12,16 @@ public class AnimalMapper {
         List<Animal> animalsList= new ArrayList<>();
 
         for(AnimalJpaEntity animalJpaEntity: animals){
-            animalsList.add(new Animal(animalJpaEntity.getAnimalid(),animalJpaEntity.getName(), animalJpaEntity.getCategory(), animalJpaEntity.getPrice()));
+            animalsList.add(new Animal(animalJpaEntity.getId(),animalJpaEntity.getName(), animalJpaEntity.getCategory(), animalJpaEntity.getPrice()));
         }
         return animalsList;
 
     }
 
     Animal mapToSingleEntity(AnimalJpaEntity animal) {
-        return new Animal(animal.getAnimalid(),animal.getName(), animal.getCategory(), animal.getPrice());
+        return new Animal(animal.getId(),animal.getName(), animal.getCategory(), animal.getPrice());
     }
+   /* AnimalJpaEntity mapToSingleModel(AnimalJpaEntity animal){
+        return new AnimalJpaEntity(animal.getid(),animal.getName(),animal.getCategory(),animal.getPrice());
+    }*/
 }

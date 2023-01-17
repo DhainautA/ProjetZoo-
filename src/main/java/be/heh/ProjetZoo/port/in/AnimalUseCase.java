@@ -9,15 +9,17 @@ public interface AnimalUseCase {
 
 
 
+
+
     List<Animal> getAnimalList();
 
-    Animal getAnimal(Long animalid);
+    Animal getAnimal(Long id);
 
     void addAnimal(Animal animal);
 
-    void modifyAnimal(Long animalid,Animal animal);
+    void modifyAnimal(Long id,Animal animal);
 
-    void deleteAnimal(Long animalid);
+    void deleteAnimal(Long id);
 
 
 

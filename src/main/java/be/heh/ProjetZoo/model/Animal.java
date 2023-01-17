@@ -11,13 +11,13 @@ public class Animal {
     private final long id;
 
     @Getter
-    private final String name;
+     private final String name;
 
     @Getter
     private final String category;
 
     @Getter
-    private final Float price;
+    private final float price;
 }
 
 

@@ -42,16 +42,4 @@ public class AnimalController {
        return "redirect:/";
    }
 
-
-
-
-
-
-
-
-
-
-
-
-
 }
