@@ -9,6 +9,9 @@
 </head>
 <body>
 <h1>Achat d'animaux</h1>
+<div>
+    <a href="http://127.0.0.1:8080/login">Log In</a>
+</div>
 <table>
     <tr>
         <th>Nom</th>
@@ -20,12 +23,13 @@
         <td th:text="${animal.getName()}"></td>
         <td th:text="${animal.getCategory()}"></td>
         <td th:text="${animal.getPrice()}"></td>
-            <td><button th:href="@{'/mAnimal/' + ${animal.getId()}}">Modifier</button></td>
-            <td><button th:href="@{'/deleteAnimal/' + ${animal.getId()}}">Supprimer</button></td>
+
         </tr>
 
 </table>
-<button href="/aAnimal">Ajouter un Animal</button>
+
+
+
 
 </body>
 </html>

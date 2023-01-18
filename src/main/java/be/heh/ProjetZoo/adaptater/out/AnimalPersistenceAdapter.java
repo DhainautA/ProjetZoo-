@@ -48,5 +48,14 @@ public class AnimalPersistenceAdapter implements AnimalUseCase {
         animalRepository.deleteById(id);
     }
 
+    @Override
+    public boolean isAdmin(String email) {
+        final List<String> admins = List.of("administrator@gmail.com","dhainaut.antoine98@gmail.com");
+        if(admins.contains(email)){
+            return true;
+        }
+        return false;
+    }
+
 
 }
