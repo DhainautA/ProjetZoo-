@@ -4,6 +4,8 @@ import be.heh.ProjetZoo.model.Animal;
 import be.heh.ProjetZoo.port.in.AnimalListUseCase;
 import be.heh.ProjetZoo.port.in.AnimalUseCase;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -61,4 +63,6 @@ public class AnimalController {
         animalUseCase.deleteAnimal(animalId);
         return "redirect:/";
     }
+
+
 }

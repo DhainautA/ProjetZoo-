@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns:th="http://www.thymeleaf.org/">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -20,12 +20,12 @@
         <td th:text="${animal.getName()}"></td>
         <td th:text="${animal.getCategory()}"></td>
         <td th:text="${animal.getPrice()}"></td>
-            <a href="@{'/mAnimal/' + ${animal.GetId()}}">Modifier</a>
-            <a th:action="@{'/deleteAnimal/' + ${animal.GetId()}}">Supprimer</a>
+            <td><button th:href="@{'/mAnimal/' + ${animal.getId()}}">Modifier</button></td>
+            <td><button th:href="@{'/deleteAnimal/' + ${animal.getId()}}">Supprimer</button></td>
         </tr>
 
 </table>
-<a href="/aAnimal">Cliquer ici</a>
+<button href="/aAnimal">Ajouter un Animal</button>
 
 </body>
 </html>
