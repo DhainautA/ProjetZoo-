@@ -9,7 +9,7 @@
 <h1>Modification d'un animal</h1>
 
 <div>
-    <form th:action="@{/modAnimal/ + ${animal.GetId}} + animal.GetId" th:object="${animal}" method="post">
+    <form th:action="@{'/modAnimal/' + ${animal.getId}}" th:object="${animal}" method="post">
         <input type="hidden" th:field="*{id}">
         <label>Nom</label><br>
         <input  th:field="*{name}" type="text" /> <br>
