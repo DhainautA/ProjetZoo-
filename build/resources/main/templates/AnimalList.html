@@ -20,6 +20,8 @@
         <td th:text="${animal.getName()}"></td>
         <td th:text="${animal.getCategory()}"></td>
         <td th:text="${animal.getPrice()}"></td>
+            <a href="@{'/mAnimal/' + ${animal.GetId()}}">Modifier</a>
+            <a th:action="@{'/deleteAnimal/' + ${animal.GetId()}}">Supprimer</a>
         </tr>
 
 </table>

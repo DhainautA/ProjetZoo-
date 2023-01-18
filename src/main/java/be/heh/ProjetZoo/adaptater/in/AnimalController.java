@@ -42,4 +42,23 @@ public class AnimalController {
        return "redirect:/";
    }
 
+    @RequestMapping(value="/mAnimal/{animalId}", method=RequestMethod.GET)
+    public String modAnimal(@PathVariable Long animalId, Model model){
+        Animal animal = animalUseCase.getAnimal(animalId);
+        model.addAttribute(animal);
+        return "modAnimal";
+    }
+
+    @RequestMapping(value="/modAnimal/{animalId}", method=RequestMethod.POST)
+    public String modAnimal(@PathVariable Long animalId, @ModelAttribute Animal animal, Model model){
+        animalUseCase.modifyAnimal(animalId, animal);
+        model.addAttribute(animal);
+        return "animalList";
+    }
+
+    @RequestMapping(value="/deleteAnimal/{animalId}", method=RequestMethod.GET)
+    public String deleteAnimal(@PathVariable Long animalId, Model model){
+        animalUseCase.deleteAnimal(animalId);
+        return "redirect:/";
+    }
 }

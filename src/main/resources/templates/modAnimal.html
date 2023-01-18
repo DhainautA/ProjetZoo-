@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Modification d'un animal</title>
+</head>
+<body>
+
+<h1>Modification d'un animal</h1>
+
+<div>
+    <form th:action="@{'/modAnimal/' + ${animal.getId}}" th:object="${animal}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <label>Nom</label><br>
+        <input  th:field="*{name}" type="text" /> <br>
+        <label>Categorie</label><br>
+        <input  th:field="*{category}" type="text" /><br>
+        <label>Prix</label><br>
+        <input  th:field="*{price}" type="number" />
+        <button type="submit" value="Submit">Modifier</button>
+    </form>
+
+</div>
+
+</body>
+</html>
