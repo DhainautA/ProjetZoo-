@@ -21,7 +21,5 @@ public class AnimalMapper {
     Animal mapToSingleEntity(AnimalJpaEntity animal) {
         return new Animal(animal.getId(),animal.getName(), animal.getCategory(), animal.getPrice());
     }
-   /* AnimalJpaEntity mapToSingleModel(AnimalJpaEntity animal){
-        return new AnimalJpaEntity(animal.getid(),animal.getName(),animal.getCategory(),animal.getPrice());
-    }*/
+
 }

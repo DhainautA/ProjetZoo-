@@ -4,6 +4,9 @@ import be.heh.ProjetZoo.model.Animal;
 import be.heh.ProjetZoo.port.in.AnimalListUseCase;
 import be.heh.ProjetZoo.port.in.AnimalUseCase;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,18 +24,27 @@ public class AnimalController {
 
 
     @GetMapping ("/")
-    public String animalList(Model model){
+    public String animalList(@AuthenticationPrincipal OidcUser principal, Authentication auth,Model model){
     animals = animalUseCase.getAnimalList();
     model.addAttribute("animals",animals);
+      if(auth==null || !animalUseCase.isAdmin(principal.getEmail())){
+          return "animalList";
+      }
+      else{
+          return "adminanimalList";
+      }
 
-    return "animalList";
+
 
     }
 
     @GetMapping("/aAnimal")
-    public String aAnimal(Model model){
+    public String aAnimal(Authentication auth, Model model){
+        if(auth == null){ return "redirect:/127.0.0.1:8080/login";}
+        else{
         model.addAttribute("animal", new Animal(0,"","",0F));
-        return "aAnimal";
+        return "/aAnimal";
+        }
     }
 
    @PostMapping("/addAnimal")
@@ -61,4 +73,6 @@ public class AnimalController {
         animalUseCase.deleteAnimal(animalId);
         return "redirect:/";
     }
+
+
 }

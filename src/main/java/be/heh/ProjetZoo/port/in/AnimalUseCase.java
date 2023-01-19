@@ -1,14 +1,10 @@
 package be.heh.ProjetZoo.port.in;
 
 import be.heh.ProjetZoo.model.Animal;
-
 import java.util.List;
 
 
 public interface AnimalUseCase {
-
-
-
 
 
     List<Animal> getAnimalList();
@@ -21,7 +17,7 @@ public interface AnimalUseCase {
 
     void deleteAnimal(Long id);
 
-
+    boolean isAdmin(String email);
 
 
 }
