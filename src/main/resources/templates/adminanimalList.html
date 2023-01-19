@@ -20,12 +20,12 @@
         <td th:text="${animal.getName()}"></td>
         <td th:text="${animal.getCategory()}"></td>
         <td th:text="${animal.getPrice()}"></td>
-            <td><button th:href="@{'/mAnimal/' + ${animal.getId()}}">Modifier</button></td>
-            <td><button th:href="@{'/deleteAnimal/' + ${animal.getId()}}">Supprimer</button></td>
+            <td><a th:href="@{'/mAnimal/' + ${animal.getId()}}">Modifier</a></td>
+            <td><a th:href="@{'/deleteAnimal/' + ${animal.getId()}}">Supprimer</a></td>
         </tr>
 
 </table>
-<button th:href="@{'/aAnimal'}">Ajouter un Animal</button>
+<a th:href="@{'/aAnimal'}">Ajouter un Animal</a>
 
 
 
